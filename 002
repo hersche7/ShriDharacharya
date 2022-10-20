@@ -1,13 +1,24 @@
 # Program to calculte roots of degree 2 equation
-
-print=("Enter coefficient of x^2 as A, coefficient of x as B and the constants as C")
-print()
+#Enter coefficient of x^2 as A, coefficient of x as B and the constants as C
 
 A=int(input('Enter coefficient of x^2: '))
 B=int(input('Enter coefficient of x: '))
 C=int(input('Enter constant: '))
 
-x1=((-B)+(((B**2)+(4*A*C))**(0.5)))/(2*A)
-x2=((-B)+(((B**2)-(4*A*C))**(0.5)))/(2*A)
+D=(B**2)-(4*A*C)
+print()
 
-print("Roots of equation are:",x1,'and',x2)
+if D=='0':
+    x=(-1*B)/(2*A)
+    print('Roots equal')
+    print('x=',x)
+elif D>0:
+    x1=((-1*B)-((D)**(0.5)))/(2*A)
+    x2=((-1*B)+((D)**(0.5)))/(2*A)
+    print('Roots real')
+    print('x=',x1,'or x=',x2)
+elif D<0:
+    x1=((-1*B)-((D)**(0.5)))/(2*A)
+    x2=((-1*B)+((D)**(0.5)))/(2*A)
+    print('Roots complex')
+    print('x=',x1,'or x=',x2)
